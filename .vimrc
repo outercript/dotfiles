@@ -1,0 +1,154 @@
+
+" Plugins Vundle
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Vundle takes care of Vundle
+Plugin 'gmarik/Vundle.vim'
+
+" Solarized Colorscheme
+Plugin 'altercation/vim-colors-solarized'
+
+" Tab Autocompletion
+Plugin 'ervandew/supertab'
+
+" Custom Status Bar
+Plugin 'bling/vim-airline'
+
+call vundle#end()
+
+
+" General
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if &t_Co >= 256 || has("gui_running")
+    colorscheme solarized
+endif
+
+set title
+set background=dark
+
+" Always show the status bar
+set laststatus=2
+set noshowmode      " Hide mode from status bar
+
+" Tabs and indentation
+set tabstop=4       " Tab is X spaces
+set softtabstop=4   " #spaces to remove on backspace
+set shiftwidth=4    " #spaces when auto indent
+set shiftround      " Use multiples of shiftwidth with << >>
+set expandtab       " Replace tabs with spaces
+set smarttab        " Tab on new lines use shiftwith instead of tabstop
+set autoindent      " Enable automatic indentation
+
+" Improve default autocomplete list
+set wildmode=list:longest
+set wildmenu
+
+" Search
+set ignorecase      " Ignore case on search
+set smartcase       " Auto case sensitive search
+set incsearch       " Incremental search
+set hlsearch        " Highlight search matches
+
+" Others
+set nobackup        " No backup file
+set nowritebackup   " Don't write it either
+set noswapfile      " Don't create a ~.swp file
+set relativenumber  " Line numbers are relative
+
+set wildignore+=*.o,*.swp,*.bak,*.pyc,*.class
+
+syntax on
+filetype on
+filetype plugin on
+filetype indent on
+
+highlight OverLength ctermbg=red ctermfg=red
+"match OverLength /\%80v.\+/
+
+" White space killer
+highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+match ExtraWhitespace /\s\+$\| \+\ze\t/
+
+
+" Functions
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! RemoveWhiteSpace()
+    exe "normal mz"
+    %s/\s\+$//ge
+    exe "normal `z"
+endfunc
+
+
+" Tricks
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Reload changes to .vimrc automatically
+"autocmd BufWritePost  ~/.vimrc source ~/.vimrc
+
+" Execute file being edited with <Shift> + e:
+map <buffer> <S-e> :w<CR>:!./% <CR>
+
+" Will allow you to use :w!! to write to a file using sudo if you forgot to
+" sudo vim file (it will prompt for sudo password when writing)
+cmap w!! %!sudo tee > /dev/null %
+
+" Plugins
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-airline
+let g:airline_powerline_fonts = 1
+let g:airline_theme="solarized"
+
+" Key Mappings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
+nnoremap <F3> :set invpaste paste?<CR>
+nnoremap <F4> :call RemoveWhiteSpace()!<CR>
+nnoremap <F5> :set invexpandtab expandtab?<CR>
+nnoremap <F6> :match OverLength /\%80v.\+/
+set pastetoggle=<F3>
+
+nnoremap <space> za
+vnoremap <space> zf
+
+" Parentesis/bracket expanding
+vnoremap $1 <esc>`>a)<esc>`<i(<esc>
+vnoremap $2 <esc>`>a]<esc>`<i[<esc>
+vnoremap $3 <esc>`>a}<esc>`<i{<esc>
+vnoremap $$ <esc>`>a"<esc>`<i"<esc>
+vnoremap $q <esc>`>a'<esc>`<i'<esc>
+vnoremap $e <esc>`>a"<esc>`<i"<esc>
+
+" Map auto complete of (, ", ', [
+noremap $1 ()<esc>i
+inoremap $2 []<esc>i
+inoremap $3 {}<esc>i
+inoremap $4 {<esc>o}<esc>O
+inoremap $q ''<esc>i
+inoremap $e ""<esc>i
+inoremap $t <><esc>i
+
+" Keyboard mapping for numeric keypad
+imap <Esc>OM <c-m>
+map <Esc>OM <c-m>
+imap <Esc>OP <nop>
+map <Esc>OP <nop>
+
+imap <Esc>Ol +
+imap <Esc>Om -
+imap <Esc>On .
+imap <Esc>Op 0
+imap <Esc>Oq 1
+imap <Esc>Or 2
+imap <Esc>Os 3
+imap <Esc>Ot 4
+imap <Esc>Ou 5
+imap <Esc>Ov 6
+imap <Esc>Ow 7
+imap <Esc>Ox 8
+imap <Esc>Oy 9
+imap <Esc>Oz 0

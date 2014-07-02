@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/usr/lib64/python2.6/site-packages/pytest_runtest'
+let g:netrw_dirhist_2='/home/orsurove/repos/mpss/repos/test/blcr/ft/scenarios'
+let g:netrw_dirhist_3='/home/orsurove/repos/mpss/repos/bb/meta-closed/classes'
+let g:netrw_dirhist_4='/home/orsurove/repos/mpss/repos/misc/automation'
+let g:netrw_dirhist_5='/home/orsurove/repos/mpss/repos/bb/meta-closed/recipes-tests/toolbox/..'
+let g:netrw_dirhist_6='/home/orsurove/repos/conjure/projects'
+let g:netrw_dirhist_7='/home/orsurove/repos/conjure/common'
+let g:netrw_dirhist_8='/home/osuro/.bash_settings'
