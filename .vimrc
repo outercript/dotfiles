@@ -27,23 +27,31 @@ if &t_Co >= 256 || has("gui_running")
     colorscheme solarized
 endif
 
+if &t_Co > 2 || has("gui_running")
+    syntax on
+    set hlsearch
+endif
+
 set title
 set background=dark
+set backspace=indent,eol,start
+
 
 " Always show the status bar
 set laststatus=2
-set noshowmode      " Hide mode from status bar
+set showmode        " Show mode in status bar
 
 " Tabs and indentation
-set tabstop=4       " Tab is X spaces
-set softtabstop=4   " #spaces to remove on backspace
-set shiftwidth=4    " #spaces when auto indent
+set tabstop=2       " Tab is X spaces
+set softtabstop=2   " #spaces to remove on backspace
+set shiftwidth=2    " #spaces when auto indent
 set shiftround      " Use multiples of shiftwidth with << >>
 set expandtab       " Replace tabs with spaces
 set smarttab        " Tab on new lines use shiftwith instead of tabstop
 set autoindent      " Enable automatic indentation
 
-" Improve default autocomplete list
+" Improve default auto complete list
+set wildignore+=*.o,*.swp,*.bak,*.pyc,*.class
 set wildmode=list:longest
 set wildmenu
 
@@ -51,17 +59,13 @@ set wildmenu
 set ignorecase      " Ignore case on search
 set smartcase       " Auto case sensitive search
 set incsearch       " Incremental search
-set hlsearch        " Highlight search matches
 
 " Others
 set nobackup        " No backup file
 set nowritebackup   " Don't write it either
 set noswapfile      " Don't create a ~.swp file
-set relativenumber  " Line numbers are relative
 
-set wildignore+=*.o,*.swp,*.bak,*.pyc,*.class
 
-syntax on
 filetype on
 filetype plugin on
 filetype indent on
@@ -74,6 +78,9 @@ highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 match ExtraWhitespace /\s\+$\| \+\ze\t/
 
+if exists("&relativenumber")
+    set relativenumber
+endif
 
 " Functions
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
