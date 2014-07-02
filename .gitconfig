@@ -1,41 +1,39 @@
 [user]
-	name = Oscar Suro
-	email = outercript@gmail.com
+    name = Oscar Suro
 
 [color]
     ui = auto
 
 [color "branch"]
-	current = yellow reverse
-	local = yellow
-	remote = green
+    current = yellow reverse
+    local = yellow
+    remote = green
 
 [color "diff"]
-	meta = yellow bold
-	frag = magenta bold
-	old = red bold
-	new = cyan bold
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = cyan bold
 
 [color "status"]
-	added = yellow
-	changed = green
-	untracked = cyan
+    added = yellow
+    changed = green
+    untracked = cyan
 
 [alias]
-	st = status
-	cm = commit -s
-	co = checkout
+    st = status
+    cm = commit -s
+    co = checkout
     br = branch
     lg = log --oneline
     lm = log --oneline master..HEAD
     logg = log --pretty=short
     amend = commit --amend
     new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
-    root = !sh -c 'cd $MYGITDIR'
 
 [core]
-	excludesfile = ~/.gitignore
-	editor = vim
-	autocrlf = input
+    excludesfile = ~/.gitignore
+    editor = vim
+    autocrlf = input
 [push]
-	default = simple
+    default = simple
