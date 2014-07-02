@@ -1,32 +1,12 @@
-
-" Plugins Vundle
-set nocompatible
-filetype off
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" Vundle takes care of Vundle
-Plugin 'gmarik/Vundle.vim'
-
-" Solarized Colorscheme
-Plugin 'altercation/vim-colors-solarized'
-
-" Tab Autocompletion
-Plugin 'ervandew/supertab'
-
-" Custom Status Bar
-Plugin 'bling/vim-airline'
-
-call vundle#end()
+" Vundle Plugins
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if v:version >= 700 && filereadable(glob("~/.vimrc.plugin"))
+    source "~/.vimrc.plugin
+endif
 
 
 " General
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if &t_Co >= 256 || has("gui_running")
-    colorscheme solarized
-endif
-
 if &t_Co > 2 || has("gui_running")
     syntax on
     set hlsearch
@@ -93,7 +73,6 @@ endfunc
 
 " Tricks
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " Reload changes to .vimrc automatically
 "autocmd BufWritePost  ~/.vimrc source ~/.vimrc
 
@@ -104,11 +83,6 @@ map <buffer> <S-e> :w<CR>:!./% <CR>
 " sudo vim file (it will prompt for sudo password when writing)
 cmap w!! %!sudo tee > /dev/null %
 
-" Plugins
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim-airline
-let g:airline_powerline_fonts = 1
-let g:airline_theme="solarized"
 
 " Key Mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

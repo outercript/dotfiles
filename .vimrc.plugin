@@ -1,0 +1,35 @@
+" Plugins Vundle
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Vundle takes care of Vundle
+Plugin 'gmarik/Vundle.vim'
+
+" Solarized Colorscheme
+Plugin 'altercation/vim-colors-solarized'
+
+" Tab Autocompletion
+Plugin 'ervandew/supertab'
+
+" Custom Status Bar
+Plugin 'bling/vim-airline'
+
+call vundle#end()
+
+
+" Plugins Settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Solarized
+if &t_Co >= 256 || has("gui_running")
+    colorscheme solarized
+endif
+
+
+" vim-airline
+let g:airline_powerline_fonts = 1
+let g:airline_theme="solarized"
