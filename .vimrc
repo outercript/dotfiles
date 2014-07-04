@@ -1,7 +1,7 @@
 " Vundle Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if v:version >= 700 && filereadable(glob("~/.vimrc.plugin"))
-    source "~/.vimrc.plugin
+    source ~/.vimrc.plugin
 endif
 
 
