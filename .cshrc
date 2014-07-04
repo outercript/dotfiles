@@ -1,12 +1,23 @@
 source /usr/local/nde/setup/nderc.csh
+# Custom PATH
+set path = ($HOME/.local/bin $path)
+
+# Source all user scripts under the cshrc.d dir
+if ( -d ~/.cshrc.d ) then
+  foreach file ( ~/.cshrc.d/*.csh )
+    source $file
+  end
+endif
 
 # Enable TAB completion mechanism
 set filec
-set autolist
 set nobeep
-
-# Fix typos
+set autolist
 set autocorrect
+
+# History
+set histdup = 'prev'    # Do not add duplicates, keeps older ones
+set history = 1000      # Save up to X lines to history file
 
 # Color rainbows
 set color
@@ -15,27 +26,9 @@ set colorcat
 # Custom stuff
 setenv EDITOR vim
 
-# Check for a color capable terminal
-if (-e "/usr/share/terminfo/x/xterm-256color") then
-  setenv TERM xterm-256color
-endif
-
 # Files that are to be ignored from completion.
-set fignore=(.o)
+set fignore=(.o .bak .pyc .class)
 
+# Aliases
+alias vi vi
 alias top top -mM
-
-# Custom Colors for Prompt
-set    c_red="%{\e[31;40;1m%}"
-set  c_green="%{\e[32;40;1m%}"
-set c_yellow="%{\e[33;40;1m%}"
-set   c_cyan="%{\e[36;40;1m%}"
-set  c_white="%{\e[37;40;1m%}"
-set  c_reset="%{\e[0m%}"
-
-# Custom Prompt
-if ($?ADE_VIEW_NAME) then
-    set prompt="[${c_cyan}${ADE_VIEW_NAME}${c_reset}> %c]%# "
-else
-    set prompt="${c_yellow}[%n@%m %c]${c_reset}%# "
-endif
