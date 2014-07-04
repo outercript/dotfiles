@@ -6,7 +6,7 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # User specific aliases and functions
-_settings_dir=~/.bash_settings
+_settings_dir=~/.bashrc.d
 if [ -d $_settings_dir ]; then
     for script in $_settings_dir/*.bash; do
         source "${script}"
