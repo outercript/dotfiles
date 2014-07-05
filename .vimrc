@@ -1,3 +1,12 @@
+" .vimrc
+" Author: Oscar Suro
+"
+" Gathered pieces from all over the net and dozens of dotfiles
+" if you like something feel free to use it in your own vimrc.
+"
+" Happy VIMming!
+
+
 " Vundle Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if v:version >= 700 && filereadable(glob("~/.vimrc.plugin"))
@@ -15,7 +24,6 @@ endif
 set title
 set background=dark
 set backspace=indent,eol,start
-
 
 " Always show the status bar
 set laststatus=2
@@ -62,6 +70,7 @@ if exists("&relativenumber")
     set relativenumber
 endif
 
+
 " Functions
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! RemoveWhiteSpace()
@@ -79,8 +88,7 @@ endfunc
 " Execute file being edited with <Shift> + e:
 map <buffer> <S-e> :w<CR>:!./% <CR>
 
-" Will allow you to use :w!! to write to a file using sudo if you forgot to
-" sudo vim file (it will prompt for sudo password when writing)
+" Will allow you to use :w!! to write to a file using sudo
 cmap w!! %!sudo tee > /dev/null %
 
 

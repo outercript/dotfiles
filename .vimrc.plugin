@@ -19,6 +19,12 @@ Plugin 'ervandew/supertab'
 " Custom Status Bar
 Plugin 'bling/vim-airline'
 
+" Improved buffer management
+Plugin 'bling/vim-bufferline'
+
+" VCS integration (Git, SVN, etc)
+Plugin 'mhinz/vim-signify'
+
 call vundle#end()
 
 
