@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # List of files or links to create as links
-links_list='.vim* .csh* .X* .gitignore'
+links_list='.vim* .bash* .csh* .X* .gitignore'
 
 dotfiles_create_symlinks() {
   echo "Setting up symlinks"

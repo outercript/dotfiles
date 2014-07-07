@@ -53,6 +53,9 @@ set nobackup        " No backup file
 set nowritebackup   " Don't write it either
 set noswapfile      " Don't create a ~.swp file
 
+" Performance stuff
+set ttyfast
+set lazyredraw
 
 filetype on
 filetype plugin on
