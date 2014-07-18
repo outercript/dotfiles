@@ -53,6 +53,9 @@ set nobackup        " No backup file
 set nowritebackup   " Don't write it either
 set noswapfile      " Don't create a ~.swp file
 
+" Resize splits when the window is resized
+au VimResized * :wincmd =
+
 " Performance stuff
 set ttyfast
 set lazyredraw
