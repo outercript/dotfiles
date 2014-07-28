@@ -15,6 +15,7 @@ Plugin 'altercation/vim-colors-solarized'
 
 " Tab Autocompletion
 Plugin 'ervandew/supertab'
+Plugin 'vim-scripts/SearchComplete'
 
 " Custom Status Bar
 Plugin 'bling/vim-airline'
