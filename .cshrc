@@ -30,5 +30,5 @@ setenv EDITOR vim
 set fignore=(.o .bak .pyc .class)
 
 # Aliases
-alias vi vi
+alias vi vim
 alias top top -mM
