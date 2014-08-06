@@ -15,7 +15,6 @@ Plugin 'altercation/vim-colors-solarized'
 
 " Tab Autocompletion
 Plugin 'ervandew/supertab'
-Plugin 'vim-scripts/SearchComplete'
 
 " Custom Status Bar
 Plugin 'bling/vim-airline'
@@ -41,5 +40,5 @@ endif
 
 
 " vim-airline
-"let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1
 let g:airline_theme="solarized"

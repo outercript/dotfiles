@@ -1,0 +1,17 @@
+#!/bin/sh
+# Start the VNC helper to enable clipboard sharing
+vncconfig -iconic &
+
+# Default Desktop (Gnome, KDE, etc)
+unset SESSION_MANAGER
+exec /etc/X11/xinit/xinitrc
+
+# This will not run unless Default Desktop failed
+
+# Unix-like terminal only behaviour
+[ -x /etc/vnc/xstartup ] && exec /etc/vnc/xstartup
+[ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources
+xsetroot -solid grey
+vncconfig -iconic &
+xterm -geometry 80x24+10+10 -ls -title "$VNCDESKTOP Desktop" &
+twm &

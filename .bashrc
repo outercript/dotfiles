@@ -27,6 +27,8 @@ shopt -s histappend
 # When changing directory small typos can be ignored by bash
 shopt -s cdspell
 
+# Resize output to fit window
+shopt -s checkwinsize
 
 # History Options
 # Don't put duplicate lines in the history.
