@@ -22,9 +22,6 @@ Plugin 'bling/vim-airline'
 " Improved buffer management
 Plugin 'bling/vim-bufferline'
 
-" VCS integration (Git, SVN, etc)
-Plugin 'mhinz/vim-signify'
-
 " Cscope mappings
 Plugin 'chazy/cscope_maps'
 
