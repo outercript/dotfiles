@@ -74,6 +74,7 @@ dotfiles_main(){
 
   if [ "$action" = setup ]; then
     dotfiles_create_symlinks
+  elif [ "$action" = vundle ]; then
     dotfiles_setup_vundle
   elif [ "$action" = cleanup ]; then
     dotfiles_remove_symlinks
