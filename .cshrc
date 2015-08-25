@@ -1,6 +1,5 @@
-source /usr/local/nde/setup/nderc.csh
 # Custom PATH
-set path = ($HOME/.local/bin $path)
+set path = ($HOME/bin $HOME/.local/bin $path)
 
 # Source all user scripts under the cshrc.d dir
 if ( -d ~/.cshrc.d ) then
@@ -33,8 +32,8 @@ set color
 set colorcat
 
 # Custom stuff
-setenv EDITOR vim
-setenv MINICOM '-c on'
+setenv EDITOR   vim
+setenv MINICOM  '-c on'
 
 # Files that are to be ignored from completion.
 set fignore=(.o .bak .pyc .class)

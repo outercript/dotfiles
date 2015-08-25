@@ -13,6 +13,9 @@ if v:version >= 700 && filereadable(glob("~/.vimrc.plugin"))
     source ~/.vimrc.plugin
 endif
 
+if filereadable(glob("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
 
 " General
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -24,6 +27,8 @@ endif
 set title
 set background=dark
 set backspace=indent,eol,start
+set encoding=utf-8
+set mouse=n         " Enable mouse in Normal mode
 
 " Always show the status bar
 set laststatus=2
@@ -39,8 +44,8 @@ set smarttab        " Tab on new lines use shiftwith instead of tabstop
 set autoindent      " Enable automatic indentation
 
 " Improve default auto complete list
-set wildignore+=*.o,*.swp,*.bak,*.pyc,*.class
-set wildmode=list:longest
+set wildignore+=*.o,*.swp,*.bak,*.pyc,*.class,*.java
+set wildmode=list:longest,full
 set wildmenu
 
 " Search
@@ -52,6 +57,7 @@ set incsearch       " Incremental search
 set nobackup        " No backup file
 set nowritebackup   " Don't write it either
 set noswapfile      " Don't create a ~.swp file
+set hidden          " Allow modified buffers to be swaped
 
 " Resize splits when the window is resized
 au VimResized * :wincmd =

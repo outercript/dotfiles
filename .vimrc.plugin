@@ -25,6 +25,12 @@ Plugin 'bling/vim-bufferline'
 " Cscope mappings
 Plugin 'chazy/cscope_maps'
 
+" Fuzzy search
+Plugin 'kien/ctrlp.vim'
+
+" Faster CtrlP matching
+Plugin 'FelikZ/ctrlp-py-matcher'
+
 call vundle#end()
 
 
@@ -39,3 +45,9 @@ endif
 " vim-airline
 let g:airline_powerline_fonts = 1
 let g:airline_theme="solarized"
+let g:airline#extensions#bufferline#enabled = 1
+let g:airline#extensions#whitespace#enabled = 0
+
+" CtrlP.vim
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
