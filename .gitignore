@@ -5,3 +5,4 @@
 .reviewboardrc
 *.depend
 *.layout
+.vim/.netrwhist
