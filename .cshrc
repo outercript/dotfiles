@@ -1,12 +1,22 @@
 # Custom PATH
 set path = ($HOME/bin $HOME/.local/bin $path)
+setenv _shellrc  "$HOME/.shellrc.d"
+setenv _localrc  "$HOME/.localrc.d"
 
-# Source all user scripts under the cshrc.d dir
-if ( -d ~/.cshrc.d ) then
-  foreach file ( ~/.cshrc.d/*.csh )
+# Source all common scripts
+if ( -d "$_shellrc" ) then
+  foreach file ( $_shellrc/*.csh )
     source $file
   end
 endif
+
+# Source all host specific scripts
+if ( -d "$_localrc" ) then
+  foreach file ( $_localrc/*.csh )
+    source $file
+  end
+endif
+
 
 # Enable TAB completion mechanism
 set filec
