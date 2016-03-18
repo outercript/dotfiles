@@ -6,3 +6,4 @@
 *.depend
 *.layout
 .vim/.netrwhist
+.vim/bundle/*
