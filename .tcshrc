@@ -1,0 +1,27 @@
+# This script is provided to add backward compatibility with C Shell.
+# In most systems, csh is just a symlink to tcsh, however, in some
+# platforms it may not be the case and may cause problems when tcsh
+# features are used.
+#
+# For this reason, .cshrc and .tcshrc have been split in two files to
+# support such legacy systems.
+
+
+# First source common definitions in the .cshrc script
+source "$HOME/.cshrc"
+
+# Now load tcsh specific scripts and features
+# Source all common scripts
+if ( -d "$_shellrc" ) then
+  foreach file ( $_shellrc/*.tcsh )
+    source $file
+  end
+endif
+
+# Source all host specific scripts
+if ( -d "$_localrc" ) then
+  foreach file ( $_localrc/*.tcsh )
+    source $file
+  end
+endif
+

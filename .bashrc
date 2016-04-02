@@ -9,7 +9,7 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # User specific aliases and functions
-_settings_dir=~/.bashrc.d
+_settings_dir=~/.shellrc.d
 if [ -d $_settings_dir ]; then
     for script in $_settings_dir/*.bash; do
         source "${script}"
@@ -40,11 +40,13 @@ export HISTIGNORE="&:[ ]*:exit"
 
 # Aliases
 alias vi="vim"
+alias ll="ls -lh"
+alias top="top -mM"
+alias gdb="gdb -tui -q"
 
 # File handling
 alias ls='ls -hF --color=auto'
-alias ll="ls -lh"
-alias grep='grep --color'
+alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
