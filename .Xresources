@@ -1,3 +1,6 @@
+! Improve font rendering
+Xft.lcdfilter: lcddefault
+
 ! Bigger font size
 xterm*faceName: DejaVu Sans Mono Book
 xterm*faceSize: 9
