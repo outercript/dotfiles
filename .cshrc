@@ -1,5 +1,7 @@
+source /etc/skel/cshrc-DEFAULT
+
 # Custom PATH
-set path = ($HOME/bin $HOME/.local/bin $path)
+set path = ($HOME/bin /opt/bin $path)
 setenv _shellrc  "$HOME/.shellrc.d"
 setenv _localrc  "$HOME/.localrc.d"
 
@@ -31,11 +33,12 @@ set notify
 set pushdtohome               # Pushd go $HOME if no args
 set pushdsilent               # Pushd no verbose
 set autorehash                # Recompute hash if a cmd is not in path
+set symlinks = 'ignore'
 
 # History
-set histdup = 'prev'          # Do not add duplicates, keeps older ones
-set history = 2000            # Save up to X lines to history file
-set savehist = (2000 merge)   # Do not replace existin history file
+set histdup = 'erase'           # Do not add duplicates, remove older ones
+set history = 10000             # Save up to X lines to history file
+set savehist = (500 merge lock) # Do not replace existing history file
 
 # Color rainbows
 set color

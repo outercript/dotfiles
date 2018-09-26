@@ -9,7 +9,7 @@
 
 " Vundle Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if v:version >= 700 && filereadable(glob("~/.vimrc.plugin"))
+if v:version >= 703 && filereadable(glob("~/.vimrc.plugin"))
     source ~/.vimrc.plugin
 endif
 
@@ -28,7 +28,10 @@ set title
 set background=dark
 set backspace=indent,eol,start
 set encoding=utf-8
-set mouse=n         " Enable mouse in Normal mode
+
+if has('mouse')
+  set mouse=n         " Enable mouse in Normal mode
+endif
 
 " Always show the status bar
 set laststatus=2
@@ -59,9 +62,6 @@ set nowritebackup   " Don't write it either
 set noswapfile      " Don't create a ~.swp file
 set hidden          " Allow modified buffers to be swaped
 
-" Resize splits when the window is resized
-au VimResized * :wincmd =
-
 " Performance stuff
 set ttyfast
 set lazyredraw
@@ -73,10 +73,15 @@ filetype indent on
 highlight OverLength ctermbg=red ctermfg=red
 "match OverLength /\%80v.\+/
 
-" White space killer
-highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
-autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
-match ExtraWhitespace /\s\+$\| \+\ze\t/
+if v:version >= 703
+  " Resize splits when the window is resized
+  au VimResized * :wincmd =
+
+  " White space killer
+  highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+  autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+  match ExtraWhitespace /\s\+$\| \+\ze\t/
+endif
 
 if exists("&relativenumber")
     set relativenumber
@@ -110,8 +115,12 @@ nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 nnoremap <F3> :set invpaste paste?<CR>
 nnoremap <F4> :call RemoveWhiteSpace()!<CR>
 nnoremap <F5> :set invexpandtab expandtab?<CR>
-nnoremap <F6> :match OverLength /\%80v.\+/
 set pastetoggle=<F3>
+
+nnoremap <F6> ]c
+nnoremap <F7> do
+nnoremap <F8> dp
+nnoremap <F9> [c
 
 nnoremap <space> za
 vnoremap <space> zf

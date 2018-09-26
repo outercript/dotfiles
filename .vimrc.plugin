@@ -18,6 +18,7 @@ Plugin 'ervandew/supertab'
 
 " Custom Status Bar
 Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " Improved buffer management
 Plugin 'bling/vim-bufferline'
@@ -26,10 +27,13 @@ Plugin 'bling/vim-bufferline'
 Plugin 'chazy/cscope_maps'
 
 " Fuzzy search
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " Faster CtrlP matching
 Plugin 'FelikZ/ctrlp-py-matcher'
+
+" Visual UNDO map
+Plugin 'mbbill/undotree'
 
 call vundle#end()
 
@@ -48,6 +52,12 @@ let g:airline_theme="solarized"
 let g:airline#extensions#bufferline#enabled = 1
 let g:airline#extensions#whitespace#enabled = 0
 
+" vim-bufferline
+let g:bufferline_rotate = 0
+
 " CtrlP.vim
-let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_working_path_mode = 'rac'
+let g:ctrlp_by_filename = 1
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+
+let g:vimrc_plugin_loaded = 1

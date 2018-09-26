@@ -2,8 +2,8 @@
 Xft.lcdfilter: lcddefault
 
 ! Bigger font size
-xterm*faceName: DejaVu Sans Mono for Powerline:style=Book
-xterm*faceSize: 9
+xterm*faceName: Source Code Pro for Powerline:style=Regular
+xterm*faceSize: 10
 xterm*renderFont: true
 
 ! I like a LOT of scrollback...

@@ -19,6 +19,7 @@ fi
 export PATH=$PATH:~/bin
 export EDITOR=vim
 export MINICOM="-c on"
+export LANG="en_US.UTF-8"
 
 # Shell Options
 # Make bash append rather than overwrite the history on disk
