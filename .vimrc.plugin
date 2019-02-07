@@ -35,6 +35,12 @@ Plugin 'FelikZ/ctrlp-py-matcher'
 " Visual UNDO map
 Plugin 'mbbill/undotree'
 
+" Diff between buffer and saved file
+Plugin 'vim-scripts/diffchanges.vim'
+
+" Snippets Framework
+Plugin 'sirver/ultisnips'
+
 call vundle#end()
 
 
@@ -59,5 +65,11 @@ let g:bufferline_rotate = 0
 let g:ctrlp_working_path_mode = 'rac'
 let g:ctrlp_by_filename = 1
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+
+" UtilSnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-tab>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsEditSplit="vertical"
 
 let g:vimrc_plugin_loaded = 1

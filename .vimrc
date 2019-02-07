@@ -74,6 +74,9 @@ highlight OverLength ctermbg=red ctermfg=red
 "match OverLength /\%80v.\+/
 
 if v:version >= 703
+  " Join comments remove leading comment character
+  set formatoptions+=j
+
   " Resize splits when the window is resized
   au VimResized * :wincmd =
 

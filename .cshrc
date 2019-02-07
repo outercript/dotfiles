@@ -24,6 +24,7 @@ endif
 set filec
 set nobeep
 set autolist
+set addsuffix
 set autocorrect
 set autolist = ambiguous      # List only showed on autocomplete fails
 set complete = Enhance        # Case in-sensitive complete
