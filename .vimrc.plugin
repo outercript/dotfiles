@@ -4,44 +4,46 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" Vundle takes care of Vundle
-Plugin 'gmarik/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
 " Solarized Colorscheme
-Plugin 'altercation/vim-colors-solarized'
+Plug 'altercation/vim-colors-solarized'
 
 " Tab Autocompletion
-Plugin 'ervandew/supertab'
+Plug 'ervandew/supertab'
 
 " Custom Status Bar
-Plugin 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Improved buffer management
-Plugin 'bling/vim-bufferline'
+Plug 'bling/vim-bufferline'
 
 " Cscope mappings
-Plugin 'chazy/cscope_maps'
+Plug 'chazy/cscope_maps'
 
 " Fuzzy search
-Plugin 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 
 " Faster CtrlP matching
-Plugin 'FelikZ/ctrlp-py-matcher'
+Plug 'FelikZ/ctrlp-py-matcher'
 
 " Visual UNDO map
-Plugin 'mbbill/undotree'
+Plug 'mbbill/undotree'
 
 " Diff between buffer and saved file
-Plugin 'vim-scripts/diffchanges.vim'
+Plug 'vim-scripts/diffchanges.vim'
+
+" Extended Syntax Highlight
+Plug 'justinmk/vim-syntax-extra'
+
+" Easy Align blocks of text
+Plug 'junegunn/vim-easy-align'
 
 " Snippets Framework
-Plugin 'sirver/ultisnips'
+"Plug 'sirver/ultisnips', { 'tag': '3.2' }
 
-call vundle#end()
+call plug#end()
 
 
 " Plugins Settings
@@ -57,6 +59,7 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme="solarized"
 let g:airline#extensions#bufferline#enabled = 1
 let g:airline#extensions#whitespace#enabled = 0
+let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
 
 " vim-bufferline
 let g:bufferline_rotate = 0
@@ -68,7 +71,7 @@ let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
 " UtilSnips
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 

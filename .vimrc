@@ -120,10 +120,9 @@ nnoremap <F4> :call RemoveWhiteSpace()!<CR>
 nnoremap <F5> :set invexpandtab expandtab?<CR>
 set pastetoggle=<F3>
 
-nnoremap <F6> ]c
-nnoremap <F7> do
-nnoremap <F8> dp
-nnoremap <F9> [c
+nnoremap <F7> do ]c
+nnoremap <F8> dp ]c
+
 
 nnoremap <space> za
 vnoremap <space> zf

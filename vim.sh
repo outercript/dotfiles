@@ -1,21 +1,24 @@
 #!/usr/bin/sh
-cd $HOME/repos/vim/src
+pushd $HOME/repos/vim/src
 
 make distclean
 
-./configure --prefix=/opt/ \
+./configure --prefix=$HOME/opt/ \
             --with-features=huge \
+            --enable-terminal \
+            --enable-cscope \
             --enable-largefile \
             --enable-multibyte \
             --enable-rubyinterp \
-            --enable-pythoninterp \
-            --with-python-config-dir=/usr/lib/python2.3/config \
             --enable-perlinterp \
             --enable-luainterp \
-            --enable-gui=no \
-            --enable-cscope \
+            --enable-pythoninterp \
+            --with-python-config-dir=/usr/lib/python2.7/config \
+            --enable-gui=yes \
             --with-x=yes \
             --with-compiledby=osuro
 
 make
 make install
+
+popd

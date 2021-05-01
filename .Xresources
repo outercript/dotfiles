@@ -2,7 +2,7 @@
 Xft.lcdfilter: lcddefault
 
 ! Bigger font size
-xterm*faceName: Source Code Pro for Powerline:style=Regular
+xterm*faceName: Source Code Pro for Powerline:style=Medium
 xterm*faceSize: 10
 xterm*renderFont: true
 
